@@ -72,7 +72,7 @@ CFactoryTemplate g_Templates[NUM_VIDEO_FILTERS + 1] = {
 	 &AMSFilterV3},
 	{L"NNK-Camera4", &CLSID_OBS_VirtualV4, CreateInstance4, NULL,
 	 &AMSFilterV4},
-	{L"OBS-Audio", &CLSID_OBS_VirtualA, CVAudio::CreateInstance, NULL,
+	{L"NNK-Audio", &CLSID_OBS_VirtualA, CVAudio::CreateInstance, NULL,
 	 &AMSFilterA}};
 
 int g_cTemplates = sizeof(g_Templates) / sizeof(g_Templates[0]);
@@ -93,7 +93,7 @@ STDAPI RegisterFilters(BOOL bRegister, int reg_video_filters)
 	hr = CoInitialize(0);
 	if (bRegister) {
 
-		hr = AMovieSetupRegisterServer(CLSID_OBS_VirtualA, L"OBS-Audio",
+		hr = AMovieSetupRegisterServer(CLSID_OBS_VirtualA, L"NNK-Audio",
 					       achFileName);
 
 		for (int i = 0; i < reg_video_filters; i++) {
@@ -118,7 +118,7 @@ STDAPI RegisterFilters(BOOL bRegister, int reg_video_filters)
 				rf2.cPins = 1;
 				rf2.rgPins = &AMSPinA;
 				hr = fm->RegisterFilter(
-					CLSID_OBS_VirtualA, L"OBS-Audio",
+					CLSID_OBS_VirtualA, L"NNK-Audio",
 					&moniker_audio,
 					&CLSID_AudioInputDeviceCategory, NULL,
 					&rf2);
