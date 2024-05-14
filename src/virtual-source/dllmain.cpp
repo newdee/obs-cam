@@ -45,32 +45,32 @@ const AMOVIESETUP_PIN AMSPinA = {
 	(LPWSTR)L"Output", FALSE, TRUE, FALSE,          FALSE,
 	&CLSID_NULL,       NULL,  1,    &AMSMediaTypesA};
 
-const AMOVIESETUP_FILTER AMSFilterV = {&CLSID_OBS_VirtualV, L"OBS Virtual Cam",
+const AMOVIESETUP_FILTER AMSFilterV = {&CLSID_OBS_VirtualV, L"NNK Live Cam",
 				       MERIT_DO_NOT_USE, 1, &AMSPinV};
 
 const AMOVIESETUP_FILTER AMSFilterV2 = {&CLSID_OBS_VirtualV2,
-					L"OBS Virtual Cam2", MERIT_DO_NOT_USE,
+					L"NNK Live Cam2", MERIT_DO_NOT_USE,
 					1, &AMSPinV};
 
 const AMOVIESETUP_FILTER AMSFilterV3 = {&CLSID_OBS_VirtualV3,
-					L"OBS Virtual Cam3", MERIT_DO_NOT_USE,
+					L"NNK Live Cam3", MERIT_DO_NOT_USE,
 					1, &AMSPinV};
 
 const AMOVIESETUP_FILTER AMSFilterV4 = {&CLSID_OBS_VirtualV4,
-					L"OBS Virtual Cam4", MERIT_DO_NOT_USE,
+					L"NNK Live Cam4", MERIT_DO_NOT_USE,
 					1, &AMSPinV};
 
 const AMOVIESETUP_FILTER AMSFilterA = {&CLSID_OBS_VirtualA,
-				       L"OBS Virtual Audio", MERIT_DO_NOT_USE,
+				       L"NNK Live Audio", MERIT_DO_NOT_USE,
 				       1, &AMSPinA};
 
 CFactoryTemplate g_Templates[NUM_VIDEO_FILTERS + 1] = {
-	{L"OBS-Camera", &CLSID_OBS_VirtualV, CreateInstance, NULL, &AMSFilterV},
-	{L"OBS-Camera2", &CLSID_OBS_VirtualV2, CreateInstance2, NULL,
+	{L"NNK-Camera", &CLSID_OBS_VirtualV, CreateInstance, NULL, &AMSFilterV},
+	{L"NNK-Camera2", &CLSID_OBS_VirtualV2, CreateInstance2, NULL,
 	 &AMSFilterV2},
-	{L"OBS-Camera3", &CLSID_OBS_VirtualV3, CreateInstance3, NULL,
+	{L"NNK-Camera3", &CLSID_OBS_VirtualV3, CreateInstance3, NULL,
 	 &AMSFilterV3},
-	{L"OBS-Camera4", &CLSID_OBS_VirtualV4, CreateInstance4, NULL,
+	{L"NNK-Camera4", &CLSID_OBS_VirtualV4, CreateInstance4, NULL,
 	 &AMSFilterV4},
 	{L"OBS-Audio", &CLSID_OBS_VirtualA, CVAudio::CreateInstance, NULL,
 	 &AMSFilterA}};
